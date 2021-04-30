@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">네트워크 신호정보</string>
+    <string name="FACEBOOK_APP_ID">509522612847674</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">19ae9590ee21b2b7362771d7540a0c2a</string>
+    <string name="ak_login_protocol_scheme">ak509522612847674</string>
+
+    <string name="networkName">네트워크 사업자 :</string>
+    <string name="simName">SIM 사업자 :</string>
+    <string name="networkType">네트워크 유형 :</string>
+    <string name="networkStrength">네트워크 강도 :</string>
+    <string name="signalLevel">신호 레벨 :</string>
+    <string name="dataState">데이터 상태 :</string>
+    <string name="cellTac">이동통신 :</string>
+    <string name="cellMnc">MNC :</string>
+    <string name="cellMcc">MCC :</string>
+    <string name="countryCode">국가 코드 :</string>
+    <string name="phoneType">휴대폰 유형 :</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+</resources>

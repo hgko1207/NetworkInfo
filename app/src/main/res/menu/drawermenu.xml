@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/network"
+        android:icon="@drawable/ic_network_check_black_24dp"
+        android:title="네트워크 신호정보" />
+    <item
+        android:id="@+id/event"
+        android:icon="@drawable/ic_event_black_24dp"
+        android:title="Events" />
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_youtube_searched_for_black_24dp"
+        android:title="Search" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="Settings" />
+    <item
+        android:id="@+id/activities"
+        android:icon="@drawable/ic_trending_up_black_24dp"
+        android:title="Activities" />
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"
+        android:title="Logout" />
+</menu>

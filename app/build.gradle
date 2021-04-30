@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    /*buildToolsVersion '27.0.3'*/
+    defaultConfig {
+        applicationId "me.hgko.networkinfo"
+        minSdkVersion 26
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:animated-vector-drawable:27.1.1'
+    implementation 'com.android.support:mediarouter-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:design:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation files('libs/android-bsf-api-3.1.jar/android-bsf-api-3.1.jar')
+    implementation files('libs/android-sun-jarsign-support-1.1.jar/android-sun-jarsign-support-1.1.jar')
+    implementation files('libs/httpcomponents-client-4.3.3/lib/commons-codec-1.6.jar')
+    implementation files('libs/httpcomponents-client-4.3.3/lib/commons-logging-1.1.3.jar')
+    implementation files('libs/httpcomponents-client-4.3.3/lib/fluent-hc-4.3.3.jar')
+    implementation files('libs/httpcomponents-client-4.3.3/lib/httpclient-4.3.3.jar')
+    implementation files('libs/httpcomponents-client-4.3.3/lib/httpclient-cache-4.3.3.jar')
+    implementation files('libs/httpcomponents-client-4.3.3/lib/httpcore-4.3.2.jar')
+    implementation files('libs/httpcomponents-client-4.3.3/lib/httpmime-4.3.3.jar')
+    implementation files('libs/httpcomponents-core-4.3.2/lib/commons-cli-1.2.jar')
+    implementation files('libs/httpcomponents-core-4.3.2/lib/httpcore-ab-4.3.2.jar')
+    implementation files('libs/httpcomponents-core-4.3.2/lib/httpcore-nio-4.3.2.jar')
+    implementation files('libs/http-2.2.1.jar')
+    implementation files('libs/mqtt-client-0.4.1-20131108.120422-14-javadoc.jar')
+    implementation files('libs/mqtt-client-0.4.1-20131108.120422-14.jar')
+    implementation files('libs/weka-stable-3.8.1-SNAPSHOT.jar')
+
+    compileOnly "org.projectlombok:lombok:1.16.18"
+    annotationProcessor "org.projectlombok:lombok:1.16.18"
+    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    implementation 'com.cardiomood.android:android-widgets:0.1.1'
+
+    implementation 'com.facebook.android:account-kit-sdk:4.30.0'
+
+    implementation 'com.google.android.gms:play-services:11.8.0'
+
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    implementation('io.socket:socket.io-client:1.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    implementation 'zh.wang.android:yweathergetter4a:1.3.0'
+
+    implementation 'com.android.support:multidex:1.0.1'
+}

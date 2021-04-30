@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <com.cardiomood.android.controls.gauge.SpeedometerGauge
+        android:id="@+id/speedometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/signalStrengthText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorBlue"
+        android:textSize="20sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="@string/networkName" />
+
+                <TextView
+                    android:id="@+id/networkNameText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="@string/simName" />
+
+                <TextView
+                    android:id="@+id/simNameText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="@string/networkType" />
+
+                <TextView
+                    android:id="@+id/networkTypeText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="@string/networkStrength" />
+
+                <TextView
+                    android:id="@+id/networkStrengthText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="@string/signalLevel" />
+
+                <TextView
+                    android:id="@+id/signalLevelText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="@string/dataState" />
+
+                <TextView
+                    android:id="@+id/dataStateText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="@string/cellTac" />
+
+                <TextView
+                    android:id="@+id/cellTacText"
+                    style="@style/TextStyle2"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="@string/cellMnc" />
+
+                <TextView
+                    android:id="@+id/cellMncText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="@string/cellMcc" />
+
+                <TextView
+                    android:id="@+id/cellMccText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="@string/countryCode" />
+
+                <TextView
+                    android:id="@+id/countryCodeText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="@string/phoneType" />
+
+                <TextView
+                    android:id="@+id/phoneTypeText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="장치 ID :" />
+
+                <TextView
+                    android:id="@+id/deviceIdText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="전화번호 :" />
+
+                <TextView
+                    android:id="@+id/phoneNumberText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="제조사 :" />
+
+                <TextView
+                    android:id="@+id/manufacturerText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="모델 :" />
+
+                <TextView
+                    android:id="@+id/modelText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

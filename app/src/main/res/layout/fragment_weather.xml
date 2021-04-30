@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="Datetime :" />
+
+                <TextView
+                    android:id="@+id/datetimeText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="Logitude :" />
+
+                <TextView
+                    android:id="@+id/logitudeText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="Latitude :" />
+
+                <TextView
+                    android:id="@+id/latitudeText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="Address :" />
+
+                <TextView
+                    android:id="@+id/addressText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="Weather :" />
+
+                <TextView
+                    android:id="@+id/weatherText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="Temperature :" />
+
+                <TextView
+                    android:id="@+id/temperatureText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="Wind Chill :" />
+
+                <TextView
+                    android:id="@+id/windChillText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="Wind Direction :" />
+
+                <TextView
+                    android:id="@+id/windDirectionText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="Wind Speed :" />
+
+                <TextView
+                    android:id="@+id/windSpeedText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="Humidity :" />
+
+                <TextView
+                    android:id="@+id/humidityText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="Pressure :" />
+
+                <TextView
+                    android:id="@+id/pressureText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="Visibility :" />
+
+                <TextView
+                    android:id="@+id/visibilityText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

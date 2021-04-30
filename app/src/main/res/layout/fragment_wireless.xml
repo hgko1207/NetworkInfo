@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="SSID :" />
+
+                <TextView
+                    android:id="@+id/ssidText"
+                    style="@style/TextStyle2"
+                    android:textColor="@color/colorBlue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="BSSID :" />
+
+                <TextView
+                    android:id="@+id/bssidText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="MAC :" />
+
+                <TextView
+                    android:id="@+id/macText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="거리 :" />
+
+                <TextView
+                    android:id="@+id/distanceText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="WiFi 속도 :" />
+
+                <TextView
+                    android:id="@+id/lineSpeedText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="WiFi 강도 :" />
+
+                <TextView
+                    android:id="@+id/rssiText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="암호화 :" />
+
+                <TextView
+                    android:id="@+id/wsecText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="채널 :" />
+
+                <TextView
+                    android:id="@+id/channelText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="주파수 :\n(중심 주파수)" />
+
+                <TextView
+                    android:id="@+id/frequencyText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="채널 폭 :" />
+
+                <TextView
+                    android:id="@+id/channelWidthText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextStyle1"
+                    android:text="IP :" />
+
+                <TextView
+                    android:id="@+id/wifiIpText"
+                    style="@style/TextStyle2" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
