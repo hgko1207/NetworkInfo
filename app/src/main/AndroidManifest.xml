@@ -24,16 +24,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyC48t90kMNZ2-ycFcCUSJ5LDNyCvVAbRwE" />
-
         <!--
             <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDhS7TXkaBq0RYhtg2TYtrqkZH1K-iZiPE" />
         -->
-
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -66,7 +65,7 @@
         <activity
             android:name=".activity.ModeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar.Mode"></activity>
+            android:theme="@style/AppTheme.NoActionBar.Mode" />
         <activity
             android:name=".activity.MainActivity"
             android:screenOrientation="portrait"
@@ -79,7 +78,6 @@
                 <action android:name="me.hgko.networkinfo.nCubeThyme.service.INCubeService" />
             </intent-filter>
         </service>
-
         <service
             android:name=".service.SynchronizeService"
             android:enabled="true"
@@ -110,18 +108,6 @@
             android:enabled="true"
             android:exported="true"
             android:stopWithTask="false" />
-        <!-- <service
-             android:name=".service.LocationDataService"
-             android:enabled="true"
-             android:exported="true" />-->
-
-        <!--<receiver
-            android:name=".receiver.DetectConnectionReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            </intent-filter>
-        </receiver>-->
     </application>
+
 </manifest>

@@ -166,7 +166,7 @@ public class WirelessFragment extends Fragment {
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
             if (action.equals(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION)) {
-                getWIFIScanResult();
+                getWifiScanResult();
                 wifiManager.startScan();
             } else if (action.equals(WifiManager.NETWORK_STATE_CHANGED_ACTION)) {
                 NetworkInfo networkInfo = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
@@ -189,7 +189,7 @@ public class WirelessFragment extends Fragment {
         wifiManager.startScan();
     }
 
-    private void getWIFIScanResult() {
+    private void getWifiScanResult() {
         wifiManager = (WifiManager) getContext().getSystemService(Context.WIFI_SERVICE);
         WifiInfo wifiInfo = wifiManager.getConnectionInfo();
         if (wifiInfo != null) {
