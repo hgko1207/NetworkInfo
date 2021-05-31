@@ -38,7 +38,7 @@ import me.hgko.networkinfo.util.CommonUtils;
 import me.hgko.networkinfo.util.NetworkInfoUtil;
 
 /**
- * Created by inspace on 2018-09-20.
+ * Created by hgko on 2018-09-20.
  */
 public class MobileService extends Service {
 

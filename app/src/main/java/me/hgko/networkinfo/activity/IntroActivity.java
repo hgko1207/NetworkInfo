@@ -21,6 +21,9 @@ import me.hgko.networkinfo.R;
 import me.hgko.networkinfo.domain.Constants;
 import me.hgko.networkinfo.util.CommonUtils;
 
+/**
+ * 초기 Intro 화면
+ */
 public class IntroActivity extends Activity {
 
     private final int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 124;
@@ -44,7 +47,11 @@ public class IntroActivity extends Activity {
         }, 2000);
     }
 
-    // TODO: Check permissions
+    /**
+     * Check permissions
+     * @param permissions
+     * @return
+     */
     private boolean checkPermisson(String[] permissions) {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
 
@@ -90,7 +97,9 @@ public class IntroActivity extends Activity {
         }
     }
 
-    // TODO: Promt user for check Missed permission
+    /**
+     * Promt user for check Missed permission
+     */
     private void checkMissedPermission() {
         final AlertDialog dialog = CommonUtils.showAlertDlg(IntroActivity.this, Constants.MISSED_PERMISSION, Constants.ASK_GRANT_MISSED_PERMISSIONS);
         dialog.setButton(DialogInterface.BUTTON_NEGATIVE, Constants.NO, new DialogInterface.OnClickListener() {

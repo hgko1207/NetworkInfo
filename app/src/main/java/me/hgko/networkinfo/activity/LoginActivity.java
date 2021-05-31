@@ -27,6 +27,9 @@ import me.hgko.networkinfo.R;
 import me.hgko.networkinfo.domain.Constants;
 import me.hgko.networkinfo.util.CommonUtils;
 
+/**
+ * 로그인 화면
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private final static int REQUEST_CODE = 999;

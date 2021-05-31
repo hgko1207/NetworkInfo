@@ -25,6 +25,9 @@ import me.hgko.networkinfo.fragment.WirelessFragment;
 
 import static me.hgko.networkinfo.util.CommonUtils.controlBackgroundServices;
 
+/**
+ * 메인 화면
+ */
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar)
@@ -58,13 +61,16 @@ public class MainActivity extends AppCompatActivity {
         controlBackgroundServices(MainActivity.this, Constants.FLAG_START);
     }
 
+    /**
+     * View Pager 설정
+     */
     private void setupViewPager() {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new MobileFragment());
         viewPagerAdapter.addFragment(new WirelessFragment());
         viewPagerAdapter.addFragment(new LocationFragment());
-        viewPagerAdapter.addFragment(new GoogleMapFragment());
-        viewPagerAdapter.addFragment(new WeatherFragment());
+        //viewPagerAdapter.addFragment(new GoogleMapFragment());
+        //viewPagerAdapter.addFragment(new WeatherFragment());
         //viewPagerAdapter.addFragment(new FusedLocationFragment());
         viewPager.setOffscreenPageLimit(viewPagerAdapter.getCount());
         viewPager.setAdapter(viewPagerAdapter);

@@ -18,7 +18,7 @@ import me.hgko.networkinfo.manager.DataManager;
 import me.hgko.networkinfo.util.CommonUtils;
 
 /**
- * Created by inspace on 2018-09-20.
+ * Created by hgko on 2018-09-20.
  */
 public class LocationDataService extends Service {
 

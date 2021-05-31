@@ -21,7 +21,7 @@ import me.hgko.networkinfo.manager.DataManager;
 import me.hgko.networkinfo.util.CommonUtils;
 
 /**
- * Created by inspace on 2018-10-30.
+ * Created by hgko on 2018-10-30.
  */
 public class LocationFusedService extends Service implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 

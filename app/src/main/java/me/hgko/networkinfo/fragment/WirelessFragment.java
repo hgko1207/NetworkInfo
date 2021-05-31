@@ -31,9 +31,9 @@ import me.hgko.networkinfo.R;
 import me.hgko.networkinfo.util.WifiInfoUtil;
 
 /**
- * Created by inspace on 2018-09-20.
+ * WIFI 정보 화면
+ * Created by hgko on 2018-09-20.
  */
-
 public class WirelessFragment extends Fragment {
 
     Unbinder unbinder;
@@ -101,6 +101,10 @@ public class WirelessFragment extends Fragment {
         }
     }
 
+    /**
+     * WIFI 데이터 표출
+     * @param connected
+     */
     private void setDataInput(boolean connected) {
         if (connected) {
             wifiManager = (WifiManager) getContext().getSystemService(Context.WIFI_SERVICE);
@@ -179,6 +183,9 @@ public class WirelessFragment extends Fragment {
         }
     };
 
+    /**
+     * WIFI Scan Start
+     */
     private void initWifiScan() {
         if (!broacastRegistered) {
             IntentFilter filter = new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION);
@@ -189,6 +196,9 @@ public class WirelessFragment extends Fragment {
         wifiManager.startScan();
     }
 
+    /**
+     * WIFI Scan 결과 불러오기
+     */
     private void getWifiScanResult() {
         wifiManager = (WifiManager) getContext().getSystemService(Context.WIFI_SERVICE);
         WifiInfo wifiInfo = wifiManager.getConnectionInfo();
@@ -200,6 +210,12 @@ public class WirelessFragment extends Fragment {
         }
     }
 
+    /**
+     * 주파수와 RSSI를 통한 WIFI 단말과의 거리 계산
+     * @param levelInDb
+     * @param freqInMHz
+     * @return
+     */
     public double calculateDistance(double levelInDb, double freqInMHz) {
         double exp = (27.55 - (20 * Math.log10(freqInMHz)) + Math.abs(levelInDb)) / 20.0;
         return Math.pow(10.0, exp);

@@ -31,9 +31,9 @@ import me.hgko.networkinfo.R;
 import me.hgko.networkinfo.util.CommonUtils;
 
 /**
- * Created by inspace on 2018-09-27.
+ * 위치 정보 화면
+ * Created by hgko on 2018-09-27.
  */
-
 public class FusedLocationFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

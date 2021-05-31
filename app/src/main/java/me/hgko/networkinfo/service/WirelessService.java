@@ -35,7 +35,7 @@ import me.hgko.networkinfo.util.CommonUtils;
 import me.hgko.networkinfo.util.WifiInfoUtil;
 
 /**
- * Created by inspace on 2018-09-20.
+ * Created by hgko on 2018-09-20.
  */
 public class WirelessService extends Service {
 

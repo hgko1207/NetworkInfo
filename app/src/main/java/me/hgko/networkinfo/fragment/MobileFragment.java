@@ -41,7 +41,8 @@ import me.hgko.networkinfo.util.CommonUtils;
 import me.hgko.networkinfo.util.NetworkInfoUtil;
 
 /**
- * Created by inspace on 2018-09-20.
+ * LTE 및 유선데이터 정보 화면
+ * Created by hgko on 2018-09-20.
  */
 public class MobileFragment extends Fragment {
 
@@ -122,6 +123,9 @@ public class MobileFragment extends Fragment {
         }
     }
 
+    /**
+     * speedometer 초기화
+     */
     private void initView() {
         speedometer.setLabelConverter(new SpeedometerGauge.LabelConverter() {
             @Override
@@ -234,6 +238,9 @@ public class MobileFragment extends Fragment {
         }
     }
 
+    /**
+     * 연결 시작
+     */
     private void startSignalStrengthListener() {
         signalStrengthListener = new SignalStrengthListener(this.getContext());
         telephonyManager = (TelephonyManager) this.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
@@ -254,12 +261,19 @@ public class MobileFragment extends Fragment {
         modelText.setText(Build.MODEL);
     }
 
+    /**
+     * 연결 종료
+     */
     private void endSignalStrengthListener() {
         if (telephonyManager != null) {
             telephonyManager.listen(signalStrengthListener, PhoneStateListener.LISTEN_NONE);
         }
     }
 
+    /**
+     * 연결 되었는지 확인
+     * @return
+     */
     private boolean isNetworkConnected() {
         NetworkInfo activeNetwork = manager.getActiveNetworkInfo();
         if (activeNetwork != null) {

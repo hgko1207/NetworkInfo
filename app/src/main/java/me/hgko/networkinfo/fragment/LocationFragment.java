@@ -29,7 +29,8 @@ import me.hgko.networkinfo.R;
 import me.hgko.networkinfo.util.CommonUtils;
 
 /**
- * Created by inspace on 2018-09-21.
+ * 위치 정보 화면
+ * Created by hgko on 2018-09-21.
  */
 public class LocationFragment extends Fragment {
 
@@ -131,10 +132,6 @@ public class LocationFragment extends Fragment {
         boolean isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
         Log.d("test", "isProviderEnabled = " + isGPSEnabled + ", " + isNetworkEnabled);
 
-        if (!isGPSEnabled) {
-
-        }
-
         if (!CommonUtils.checkPermission(getActivity())) {
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
                     1000, 1, locationListener);
@@ -188,6 +185,10 @@ public class LocationFragment extends Fragment {
 //        }
     }
 
+    /**
+     * 위치 정보 표출
+     * @param location
+     */
     private void setLocationInfo(Location location) {
         providerText.setText(location.getProvider());
         onOffImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.mipmap.ic_gps_on, null));
@@ -206,12 +207,22 @@ public class LocationFragment extends Fragment {
         addressText.setText(address);
     }
 
+    /**
+     * 반올림
+     * @param unrounded
+     * @param precision
+     * @param roundingMode
+     * @return
+     */
     public double round(double unrounded, int precision, int roundingMode) {
         BigDecimal bd = new BigDecimal(unrounded);
         BigDecimal rounded = bd.setScale(precision, roundingMode);
         return rounded.doubleValue();
     }
 
+    /**
+     * Provider 정보 불러오기
+     */
     private void getProviders() {
         String result = "App Providers : ";
         List<String> providers = locationManager.getAllProviders();

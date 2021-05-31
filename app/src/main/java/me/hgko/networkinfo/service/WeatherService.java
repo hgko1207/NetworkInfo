@@ -25,7 +25,7 @@ import zh.wang.android.yweathergetter4a.YahooWeather;
 import zh.wang.android.yweathergetter4a.YahooWeatherInfoListener;
 
 /**
- * Created by inspace on 2018-10-18.
+ * Created by hgko on 2018-10-18.
  */
 public class WeatherService extends Service implements YahooWeatherInfoListener {
 

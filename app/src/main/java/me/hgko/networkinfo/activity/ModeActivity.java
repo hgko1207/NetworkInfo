@@ -22,6 +22,9 @@ import me.hgko.networkinfo.domain.Constants;
 import me.hgko.networkinfo.domain.LteSignalInfo;
 import me.hgko.networkinfo.manager.DataManager;
 
+/**
+ * 모드 선택 화면
+ */
 public class ModeActivity extends AppCompatActivity {
 
     private final DataManager dataManager = DataManager.getInstance();

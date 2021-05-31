@@ -36,9 +36,9 @@ import butterknife.Unbinder;
 import me.hgko.networkinfo.R;
 
 /**
- * Created by inspace on 2018-09-20.
+ * 구글 지도 화면
+ * Created by hgko on 2018-09-20.
  */
-
 public class GoogleMapFragment extends Fragment implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 

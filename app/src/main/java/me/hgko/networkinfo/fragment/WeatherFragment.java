@@ -25,7 +25,8 @@ import zh.wang.android.yweathergetter4a.YahooWeather;
 import zh.wang.android.yweathergetter4a.YahooWeatherInfoListener;
 
 /**
- * Created by inspace on 2018-10-16.
+ * 날씨 정보 화면
+ * Created by hgko on 2018-10-16.
  */
 public class WeatherFragment extends Fragment implements YahooWeatherInfoListener {
 
@@ -101,6 +102,11 @@ public class WeatherFragment extends Fragment implements YahooWeatherInfoListene
         }
     }
 
+    /**
+     * 날씨 정보 불러오기
+     * @param weatherInfo
+     * @param errorType
+     */
     @Override
     public void gotWeatherInfo(WeatherInfo weatherInfo, YahooWeather.ErrorType errorType) {
         if (weatherInfo != null) {
@@ -119,6 +125,9 @@ public class WeatherFragment extends Fragment implements YahooWeatherInfoListene
         }
     }
 
+    /**
+     * GCP 정보를 통해 날씨정보 쿼리
+     */
     private void searchByGPS() {
         yahooWeather.setNeedDownloadIcons(true);
         yahooWeather.setUnit(YahooWeather.UNIT.CELSIUS);
