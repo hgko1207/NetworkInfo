@@ -131,9 +131,9 @@ public class CommonUtils {
         serviceList.add(SynchronizeService.class);
         serviceList.add(MobileService.class);
         serviceList.add(WirelessService.class);
-//        serviceList.add(LocationDataService.class);
-        serviceList.add(WeatherService.class);
         serviceList.add(LocationFusedService.class);
+//        serviceList.add(LocationDataService.class);
+//        serviceList.add(WeatherService.class);
         return serviceList;
     }
 

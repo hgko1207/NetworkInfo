@@ -117,22 +117,22 @@ public class FusedLocationFragment extends Fragment implements GoogleApiClient.C
     LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
-            if (location != null) {
-                Log.d("networkLog", location.toString());
-                providerText.setText(location.getProvider());
-                latitudeText.setText(String.valueOf(location.getLatitude()));
-                longitudeText.setText(String.valueOf(location.getLongitude()));
-                altitudeText.setText(String.valueOf(location.getAltitude()));
-                accuracyText.setText(String.valueOf(location.getAccuracy() + "m"));
-                speedText.setText(String.valueOf(location.getSpeed()) + " m/s");
+        if (location != null) {
+            Log.d("networkLog", location.toString());
+            providerText.setText(location.getProvider());
+            latitudeText.setText(String.valueOf(location.getLatitude()));
+            longitudeText.setText(String.valueOf(location.getLongitude()));
+            altitudeText.setText(String.valueOf(location.getAltitude()));
+            accuracyText.setText(String.valueOf(location.getAccuracy() + "m"));
+            speedText.setText(String.valueOf(location.getSpeed()) + " m/s");
 
-                double currentSpeed = round(location.getSpeed(), 3, BigDecimal.ROUND_HALF_UP);
-                double kmphSpeed = round((currentSpeed * 3.6), 3, BigDecimal.ROUND_HALF_UP);
-                currentSpeedText.setText(kmphSpeed + " km/h");
-                timeText.setText(dateFormat.format(new Date(location.getTime())));
-                String address = CommonUtils.getAddress(getContext(), location.getLatitude(), location.getLongitude());
-                addressText.setText(address);
-            }
+            double currentSpeed = round(location.getSpeed(), 3, BigDecimal.ROUND_HALF_UP);
+            double kmphSpeed = round((currentSpeed * 3.6), 3, BigDecimal.ROUND_HALF_UP);
+            currentSpeedText.setText(kmphSpeed + " km/h");
+            timeText.setText(dateFormat.format(new Date(location.getTime())));
+            String address = CommonUtils.getAddress(getContext(), location.getLatitude(), location.getLongitude());
+            addressText.setText(address);
+        }
         }
     };
 

@@ -52,6 +52,8 @@ public class NCubeConnectionService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         context = getBaseContext();
 
+        Log.d("networkLog11", "onStartCommand");
+
         thread = new Thread() {
             @Override
             public void run() {
@@ -60,6 +62,7 @@ public class NCubeConnectionService extends Service {
                     phoneNumber = telephonyManager.getLine1Number();
                 }
 
+                Log.d("networkLog11", "phoneNumber : " + phoneNumber);
                 setNCubeSetting();
                 startNCube(context);
             }
@@ -85,6 +88,8 @@ public class NCubeConnectionService extends Service {
      * @param context
      */
     public void startNCube(Context context) {
+
+        Log.d("networkLog11", "startNCube");
         /**
          * Check if server configuration is submitted and no connection with the server
          */
@@ -105,7 +110,7 @@ public class NCubeConnectionService extends Service {
             serviceIntent.setClass(context, NCubeService.class);
             context.bindService(serviceIntent, serveConn, Context.BIND_AUTO_CREATE);
 
-            Log.d("networkLog", "startNCube");
+            Log.d("networkLog11", "startNCube");
             runningState = true;
         }
     }
@@ -193,8 +198,8 @@ public class NCubeConnectionService extends Service {
             "{\n" +
                 "\"useprotocol\": \"http\",\n" +
                 "\"cse\": {\n" +
-                "\"cbhost\": \"125.138.91.207\",\n" +
-                "\"cbport\": \"13008\",\n" +
+                "\"cbhost\": \"49.175.97.214\",\n" +
+                "\"cbport\": \"3000\",\n" +
                 "\"cbname\": \"Mobius\",\n" +
                 "\"cbcseid\": \"/Mobius\",\n" +
                 "\"mqttport\": \"1883\"\n" +
@@ -240,7 +245,7 @@ public class NCubeConnectionService extends Service {
             "}\n",
         Constants.DEF_DEST_IP,
         Constants.DEF_DEST_PORT).replace("userID", phoneNumber.replace("+", "").trim());
-        Log.d("networkLog", defaultXML);
+        Log.d("networkLog11", defaultXML);
         return defaultXML;
     }
 

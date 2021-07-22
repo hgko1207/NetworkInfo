@@ -113,7 +113,7 @@ public class MobileFragment extends Fragment {
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        Log.d("MainActivity", "setUserVisibleHint : " + isVisibleToUser);
+        Log.d("networkLog", "setUserVisibleHint : " + isVisibleToUser);
         if (isVisible) {
             if (isVisibleToUser) { // 화면에 실제로 보일때
                 startSignalStrengthListener();
@@ -149,7 +149,7 @@ public class MobileFragment extends Fragment {
         public void onAvailable(Network network) {
             NetworkInfo networkInfo = manager.getNetworkInfo(network);
             if (networkInfo.getType() == ConnectivityManager.TYPE_MOBILE) {
-                Log.d("MainActivity", "LTE 네트워크 연결됨");
+                Log.d("networkLog", "LTE 네트워크 연결됨");
                 startSignalStrengthListener();
             }
         }
@@ -159,7 +159,7 @@ public class MobileFragment extends Fragment {
             NetworkInfo networkInfo = manager.getNetworkInfo(network);
             if (networkInfo != null) {
                 if (networkInfo.getType() == ConnectivityManager.TYPE_MOBILE) {
-                    Log.d("MainActivity", "LTE 네트워크 끊어짐");
+                    Log.d("networkLog", "LTE 네트워크 끊어짐");
                     dataStateText.setText("연결해제");
                     endSignalStrengthListener();
                 }
@@ -232,9 +232,6 @@ public class MobileFragment extends Fragment {
             networkTypeText.setText(NetworkInfoUtil.getNetworkType(telephonyManager));
             dataStateText.setText(isNetworkConnected() ? "데이터 연결됨" : "연결해제");
             phoneTypeText.setText(NetworkInfoUtil.getPhoneType(telephonyManager));
-
-//            Log.d("MainActivity'", "onSignalStrengthsChanged() called with "
-//                    + signalStrength + "; gsmSignalStrength = [" + signalStrength.getGsmSignalStrength() + "]");
         }
     }
 

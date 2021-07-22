@@ -169,9 +169,15 @@ public class WirelessService extends Service {
 
             Gson gson = new Gson();
             String json = gson.toJson(wifiDataInfo);
+
             Log.d("networkLog", json);
 
             dbHandler.inputData("WIFI", json);
+
+            try {
+                Thread.sleep(5000);
+            } catch (Exception e) {
+            }
         }
     }
 

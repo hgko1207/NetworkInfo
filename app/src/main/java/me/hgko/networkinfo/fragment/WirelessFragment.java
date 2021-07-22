@@ -30,6 +30,8 @@ import butterknife.Unbinder;
 import me.hgko.networkinfo.R;
 import me.hgko.networkinfo.util.WifiInfoUtil;
 
+import static com.google.android.gms.internal.zzahn.runOnUiThread;
+
 /**
  * WIFI 정보 화면
  * Created by hgko on 2018-09-20.
@@ -107,30 +109,35 @@ public class WirelessFragment extends Fragment {
      */
     private void setDataInput(boolean connected) {
         if (connected) {
-            wifiManager = (WifiManager) getContext().getSystemService(Context.WIFI_SERVICE);
-            WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    wifiManager = (WifiManager) getContext().getSystemService(Context.WIFI_SERVICE);
+                    WifiInfo wifiInfo = wifiManager.getConnectionInfo();
 
-            initWifiScan();
+                    initWifiScan();
 
-            ssidText.setText(wifiInfo.getSSID().replace("\"", ""));
-            bssidText.setText(wifiInfo.getBSSID());
-            macText.setText(WifiInfoUtil.getMacAddress());
+                    ssidText.setText(wifiInfo.getSSID().replace("\"", ""));
+                    bssidText.setText(wifiInfo.getBSSID());
+                    macText.setText(WifiInfoUtil.getMacAddress());
 
-            // 암호화 방식
-            for (ScanResult result : wifiManager.getScanResults()) {
-                if (wifiInfo.getSSID().equals("\"" + result.SSID + "\"")) {
-                    wsecText.setText(result.capabilities);
-                    int channelWidth = WifiInfoUtil.getChannelBandwidth(result.channelWidth);
-                    int centerFrequency = result.centerFreq0;
-                    frequencyText.setText(result.frequency + " (" + centerFrequency + ") MHz");
-                    channelWidthText.setText(channelWidth + " MHz (" + (centerFrequency - (channelWidth / 2)) + "-"
-                            + (centerFrequency + (channelWidth / 2)) + " MHz)");
+                    // 암호화 방식
+                    for (ScanResult result : wifiManager.getScanResults()) {
+                        if (wifiInfo.getSSID().equals("\"" + result.SSID + "\"")) {
+                            wsecText.setText(result.capabilities);
+                            int channelWidth = WifiInfoUtil.getChannelBandwidth(result.channelWidth);
+                            int centerFrequency = result.centerFreq0;
+                            frequencyText.setText(result.frequency + " (" + centerFrequency + ") MHz");
+                            channelWidthText.setText(channelWidth + " MHz (" + (centerFrequency - (channelWidth / 2)) + "-"
+                                    + (centerFrequency + (channelWidth / 2)) + " MHz)");
+                        }
+                    }
+
+                    // BSS: Base Service Sets
+                    channelText.setText(WifiInfoUtil.convertFrequencyToChannel(wifiInfo.getFrequency()) + "");
+                    wifiIpText.setText(WifiInfoUtil.intToInetAddress(wifiManager.getDhcpInfo().ipAddress));
                 }
-            }
-
-            // BSS: Base Service Sets
-            channelText.setText(WifiInfoUtil.convertFrequencyToChannel(wifiInfo.getFrequency()) + "");
-            wifiIpText.setText(WifiInfoUtil.intToInetAddress(wifiManager.getDhcpInfo().ipAddress));
+            });
         } else {
             if (broacastRegistered) {
                 getContext().unregisterReceiver(wifiScanReceiver);
@@ -193,6 +200,7 @@ public class WirelessFragment extends Fragment {
             getContext().registerReceiver(wifiScanReceiver, filter);
             broacastRegistered = true;
         }
+
         wifiManager.startScan();
     }
 
@@ -200,14 +208,19 @@ public class WirelessFragment extends Fragment {
      * WIFI Scan 결과 불러오기
      */
     private void getWifiScanResult() {
-        wifiManager = (WifiManager) getContext().getSystemService(Context.WIFI_SERVICE);
-        WifiInfo wifiInfo = wifiManager.getConnectionInfo();
-        if (wifiInfo != null) {
-            DecimalFormat df = new DecimalFormat("#.##");
-            distanceText.setText(df.format(calculateDistance(wifiInfo.getRssi(), wifiInfo.getFrequency())) + " 미터");
-            lineSpeedText.setText(wifiInfo.getLinkSpeed() + " Mbps");
-            rssiText.setText(wifiInfo.getRssi() + " dBm");
-        }
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                wifiManager = (WifiManager) getContext().getSystemService(Context.WIFI_SERVICE);
+                WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+                if (wifiInfo != null) {
+                    DecimalFormat df = new DecimalFormat("#.##");
+                    distanceText.setText(df.format(calculateDistance(wifiInfo.getRssi(), wifiInfo.getFrequency())) + " 미터");
+                    lineSpeedText.setText(wifiInfo.getLinkSpeed() + " Mbps");
+                    rssiText.setText(wifiInfo.getRssi() + " dBm");
+                }
+            }
+        });
     }
 
     /**

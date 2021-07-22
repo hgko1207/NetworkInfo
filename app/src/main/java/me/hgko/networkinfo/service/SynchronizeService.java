@@ -132,24 +132,24 @@ public class SynchronizeService extends Service {
 
     @Override
     public void onTaskRemoved(Intent rootIntent) {
-        super.onTaskRemoved(rootIntent);
         Log.d("networkLog", "SynchronizeService onTaskRemoved()");
-        if (timer != null) {
-            timer.cancel();
-        }
-
-        dbHandler.close();
+        super.onTaskRemoved(rootIntent);
+//        if (timer != null) {
+//            timer.cancel();
+//        }
+//
+//        dbHandler.close();
     }
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         Log.d("networkLog", "SynchronizeService onDestroy()");
-        if (timer != null) {
-            timer.cancel();
-        }
-
-        dbHandler.close();
+        super.onDestroy();
+//        if (timer != null) {
+//            timer.cancel();
+//        }
+//
+//        dbHandler.close();
     }
 
     @Override

@@ -33,6 +33,8 @@ public class LocationFusedService extends Service implements GoogleApiClient.Con
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
+        Log.d("networkLog", "LocationFusedService onStartCommand");
+
         googleApiClient = new GoogleApiClient.Builder(getBaseContext())
                 .addApi(LocationServices.API)
                 .addConnectionCallbacks(this)
@@ -48,24 +50,30 @@ public class LocationFusedService extends Service implements GoogleApiClient.Con
     LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
-            if (location != null) {
-                LteSignalInfo lteSignalInfo = dataManager.getLteSignalInfo();
-                if (lteSignalInfo != null) {
-                    lteSignalInfo.setProvider(location.getProvider());
-                    lteSignalInfo.setLatitude(location.getLatitude());
-                    lteSignalInfo.setLongitude(location.getLongitude());
-                    lteSignalInfo.setAltitude(location.getAltitude());
-                    lteSignalInfo.setSpeed(location.getSpeed());
-                    lteSignalInfo.setKmhSpeed((float) (location.getSpeed() * 3.6));
-                    lteSignalInfo.setAccuracy(location.getAccuracy());
-                    dataManager.setLteSignalInfo(lteSignalInfo);
-                }
+
+        Log.d("networkLog", "LocationFusedService => " + location.getLongitude() + ", " + location.getLatitude());
+
+        if (location != null) {
+            LteSignalInfo lteSignalInfo = dataManager.getLteSignalInfo();
+            if (lteSignalInfo != null) {
+                lteSignalInfo.setProvider(location.getProvider());
+                lteSignalInfo.setLatitude(location.getLatitude());
+                lteSignalInfo.setLongitude(location.getLongitude());
+                lteSignalInfo.setAltitude(location.getAltitude());
+                lteSignalInfo.setSpeed(location.getSpeed());
+                lteSignalInfo.setKmhSpeed((float) (location.getSpeed() * 3.6));
+                lteSignalInfo.setAccuracy(location.getAccuracy());
+
+                dataManager.setLteSignalInfo(lteSignalInfo);
             }
+        }
         }
     };
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
+        Log.d("networkLog", "LocationFusedService onConnected");
+
         if (!CommonUtils.checkPermission(getBaseContext())) {
             LocationRequest locationRequest = LocationRequest.create();
             locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
@@ -84,16 +92,18 @@ public class LocationFusedService extends Service implements GoogleApiClient.Con
 
     @Override
     public void onTaskRemoved(Intent rootIntent) {
+        Log.d("networkLog", "LocationFusedService onTaskRemoved()");
         super.onTaskRemoved(rootIntent);
-        providerApi.removeLocationUpdates(googleApiClient, locationListener);
-        googleApiClient.disconnect();
+        //providerApi.removeLocationUpdates(googleApiClient, locationListener);
+        //googleApiClient.disconnect();
     }
 
     @Override
     public void onDestroy() {
+        Log.d("networkLog", "LocationFusedService onDestroy()");
         super.onDestroy();
-        providerApi.removeLocationUpdates(googleApiClient, locationListener);
-        googleApiClient.disconnect();
+        //providerApi.removeLocationUpdates(googleApiClient, locationListener);
+        //googleApiClient.disconnect();
     }
 
     @Nullable
@@ -101,5 +111,4 @@ public class LocationFusedService extends Service implements GoogleApiClient.Con
     public IBinder onBind(Intent intent) {
         return null;
     }
-
 }

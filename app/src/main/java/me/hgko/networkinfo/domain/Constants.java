@@ -19,8 +19,8 @@ public class Constants {
     public static String HOST = "localhost";
     public static Integer PORT = 7622;
 
-    public static String DEF_DEST_IP = "192.168.1.17";
-    public static String DEF_DEST_PORT = "7579";
+    public static String DEF_DEST_IP = "49.175.97.214";
+    public static String DEF_DEST_PORT = "3000";
 
     public static String YES = "Yes";
     public static String NO = "No";

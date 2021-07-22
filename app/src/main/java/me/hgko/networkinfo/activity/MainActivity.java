@@ -68,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPagerAdapter.addFragment(new MobileFragment());
         viewPagerAdapter.addFragment(new WirelessFragment());
-        viewPagerAdapter.addFragment(new LocationFragment());
+        //viewPagerAdapter.addFragment(new LocationFragment());
         //viewPagerAdapter.addFragment(new GoogleMapFragment());
         //viewPagerAdapter.addFragment(new WeatherFragment());
-        //viewPagerAdapter.addFragment(new FusedLocationFragment());
+        viewPagerAdapter.addFragment(new FusedLocationFragment());
         viewPager.setOffscreenPageLimit(viewPagerAdapter.getCount());
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);

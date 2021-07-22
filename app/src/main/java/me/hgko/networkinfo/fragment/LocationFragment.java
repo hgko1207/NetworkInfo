@@ -124,19 +124,19 @@ public class LocationFragment extends Fragment {
         criteria.setPowerRequirement(Criteria.POWER_LOW);
 
         final String bestProvider = locationManager.getBestProvider(criteria, true);
-        Log.d("test", "bestProvider = " + bestProvider);
+        Log.d("networkLog", "bestProvider = " + bestProvider);
 
         // GPS 정보 가져오기
         boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         // 현재 네트워크 상태 값 알아오기
         boolean isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-        Log.d("test", "isProviderEnabled = " + isGPSEnabled + ", " + isNetworkEnabled);
+        Log.d("networkLog", "isProviderEnabled = " + isGPSEnabled + ", " + isNetworkEnabled);
 
         if (!CommonUtils.checkPermission(getActivity())) {
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
-                    1000, 1, locationListener);
+                    2000, 1, locationListener);
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
-                    1000, 1, locationListener);
+                    2000, 1, locationListener);
         }
 
 //        // GPS 프로바이더 사용가능여부

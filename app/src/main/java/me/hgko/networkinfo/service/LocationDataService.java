@@ -28,6 +28,8 @@ public class LocationDataService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
+        Log.d("networkLog", "LocationDataService onStartCommand");
+
         locationManager = (LocationManager) getBaseContext().getSystemService(Context.LOCATION_SERVICE);
         initLocation();
 
@@ -37,6 +39,9 @@ public class LocationDataService extends Service {
     LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
+
+            Log.d("networkLog", "LocationDataService => " + location.getLongitude() + ", " + location.getLatitude());
+
             LteSignalInfo lteSignalInfo = dataManager.getLteSignalInfo();
             if (lteSignalInfo != null) {
                 lteSignalInfo.setProvider(location.getProvider());
@@ -46,6 +51,7 @@ public class LocationDataService extends Service {
                 lteSignalInfo.setSpeed(location.getSpeed());
                 lteSignalInfo.setKmhSpeed((float) (location.getSpeed() * 3.6));
                 lteSignalInfo.setAccuracy(location.getAccuracy());
+
                 dataManager.setLteSignalInfo(lteSignalInfo);
             }
         }
@@ -77,14 +83,16 @@ public class LocationDataService extends Service {
 
     @Override
     public void onTaskRemoved(Intent rootIntent) {
+        Log.d("networkLog", "LocationDataService onTaskRemoved()");
         super.onTaskRemoved(rootIntent);
-        locationManager.removeUpdates(locationListener);
+        //locationManager.removeUpdates(locationListener);
     }
 
     @Override
     public void onDestroy() {
+        Log.d("networkLog", "LocationDataService onDestroy()");
         super.onDestroy();
-        locationManager.removeUpdates(locationListener);
+        //locationManager.removeUpdates(locationListener);
     }
 
     @Nullable

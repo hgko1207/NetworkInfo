@@ -173,6 +173,11 @@ public class MobileService extends Service {
         Log.d("networkLog", json);
 
         dbHandler.inputData("LTE", json);
+
+        try {
+            Thread.sleep(5000);
+        } catch (Exception e) {
+        }
     }
 
     private void startSignalStrengthListener() {
